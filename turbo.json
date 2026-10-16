@@ -1,15 +1,37 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["tsconfig.base.json"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", "build/**"]
+      "outputs": ["dist/**", "build/**", "src/generated/**"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "!src/generated/**",
+        "!dist/**",
+        "!build/**",
+        "!.react-router/**",
+        "!.turbo/**",
+        "!**/*.tsbuildinfo"
+      ]
     },
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "typecheck": {},
+    "typecheck": {
+      "dependsOn": ["^typecheck"],
+      "outputs": ["src/generated/**", ".react-router/types/**"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "!src/generated/**",
+        "!dist/**",
+        "!build/**",
+        "!.react-router/**",
+        "!.turbo/**",
+        "!**/*.tsbuildinfo"
+      ]
+    },
     "clean": {
       "cache": false
     }

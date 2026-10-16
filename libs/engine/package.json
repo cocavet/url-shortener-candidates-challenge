@@ -5,16 +5,26 @@
   "main": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "pnpm db:generate && tsc",
     "clean": "rm -rf dist tsconfig.tsbuildinfo .turbo",
-    "dev": "tsc --watch",
-    "typecheck": "tsc --noEmit"
+    "dev": "pnpm db:generate && tsc --watch",
+    "typecheck": "pnpm db:generate && tsc --noEmit",
+    "db:generate": "prisma generate",
+    "db:migrate": "RUST_LOG=info prisma migrate deploy"
   },
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./sqlite": "./src/infrastructure/sqlite.ts",
+    "./code-generator": "./src/infrastructure/crypto-short-code.ts"
   },
   "devDependencies": {
     "@types/node": "^22.19.7",
+    "prisma": "7.10.0",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@prisma/adapter-better-sqlite3": "7.10.0",
+    "@prisma/client": "7.10.0",
+    "better-sqlite3": "12.11.1"
   }
 }

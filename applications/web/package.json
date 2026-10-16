@@ -5,26 +5,26 @@
   "scripts": {
     "build": "react-router build",
     "clean": "rm -rf build .react-router .turbo",
-    "dev": "react-router dev",
-    "start": "react-router-serve ./build/server/index.js",
+    "dev": "tsx watch server.ts",
+    "start": "NODE_ENV=production tsx server.ts",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
     "@react-router/node": "7.12.0",
-    "@react-router/serve": "7.12.0",
     "@url-shortener/engine": "workspace:*",
     "isbot": "^5.1.31",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "react-router": "7.12.0"
+    "react-router": "7.12.0",
+    "sirv": "3.0.2",
+    "tsx": "4.23.15"
   },
   "devDependencies": {
     "@react-router/dev": "7.12.0",
-    "@tailwindcss/vite": "^4.1.13",
     "@types/node": "^22",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "tailwindcss": "^4.1.13",
+    "sass": "1.105.1",
     "typescript": "^5.9.2",
     "vite": "^7.1.7",
     "vite-tsconfig-paths": "^5.1.4"

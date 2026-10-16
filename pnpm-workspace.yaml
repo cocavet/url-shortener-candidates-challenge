@@ -1,3 +1,6 @@
 packages:
   - "applications/*"
   - "libs/*"
+
+onlyBuiltDependencies:
+  - better-sqlite3

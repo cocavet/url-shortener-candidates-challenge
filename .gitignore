@@ -143,3 +143,12 @@ vite.config.ts.timestamp-*
 
 # Claude code
 .claude/settings.local.json
+
+# Generated Prisma client and local SQLite files
+libs/engine/src/generated/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+test-results/
+playwright-report/

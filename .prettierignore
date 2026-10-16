@@ -1,0 +1,6 @@
+**/build/
+**/dist/
+**/.react-router/
+**/src/generated/
+**/*.md
+pnpm-lock.yaml
