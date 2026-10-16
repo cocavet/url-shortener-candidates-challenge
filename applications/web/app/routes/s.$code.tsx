@@ -1,15 +1,10 @@
-import { redirect } from "react-router";
 import type { Route } from "./+types/s.$code";
-import { shortenedUrls } from "@url-shortener/engine";
+import { redirectLink } from "../server/links.server";
 
-export function loader({ params }: Route.LoaderArgs) {
-  const { code } = params;
+export function loader({ request, params, context }: Route.LoaderArgs) {
+  return redirectLink(request, params.code, context);
+}
 
-  const url = shortenedUrls.get(code);
-
-  if (!url) {
-    throw new Response("Not Found", { status: 404 });
-  }
-
-  return redirect(url);
+export function action({ request, params, context }: Route.ActionArgs) {
+  return redirectLink(request, params.code, context);
 }
