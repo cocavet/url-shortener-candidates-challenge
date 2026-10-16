@@ -31,7 +31,8 @@
     font-size: 16px;
 
     &::placeholder {
-      color: $muted;
+      color: #6a6c77;
+      font-size: 14px;
     }
 
     &:hover {

@@ -107,6 +107,15 @@
 
 @media (max-width: 560px) {
   .link-row {
+    grid-template-columns: minmax(0, 1fr);
     padding: 16px;
+  }
+
+  .link-row > .copy-control {
+    align-items: stretch;
+  }
+
+  .link-row .copy-control__button {
+    width: 100%;
   }
 }

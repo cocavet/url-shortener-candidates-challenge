@@ -56,7 +56,7 @@ export function ShortenForm({ creationResult, isPending }: ShortenFormProps) {
             name="url"
             value={originalUrl}
             onChange={handleUrlChange}
-            placeholder="https://example.com/something-lovely"
+            placeholder="https://example.com/some-long-link-goes-here"
             autoComplete="url"
             spellCheck={false}
             readOnly={isPending}
