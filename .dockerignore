@@ -11,3 +11,13 @@ node_modules
 **/.react-router
 .turbo
 **/.turbo
+**/src/generated
+**/*.tsbuildinfo
+**/*.db
+**/*.db-journal
+**/*.db-wal
+**/*.db-shm
+**/*.log
+.claude
+test-results
+playwright-report
