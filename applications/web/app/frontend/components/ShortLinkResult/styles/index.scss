@@ -1,0 +1,48 @@
+@use "../../../styles/variables" as *;
+
+.link-result {
+  margin-top: 20px;
+  padding: 18px;
+  border: 0;
+  border-radius: 16px;
+  background: #f0f8f1;
+
+  &__title {
+    color: $success;
+    font-size: 15px;
+    font-weight: 650;
+  }
+
+  &__link {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 14px;
+    margin-top: 10px;
+  }
+
+  &__url {
+    color: $success;
+    font-size: 15px;
+    font-weight: 650;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 560px) {
+  .link-result {
+    padding: 16px;
+  }
+
+  .link-result__link {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .link-result .copy-control {
+    align-items: flex-start;
+  }
+
+  .link-result .copy-control--manual {
+    align-items: stretch;
+  }
+}

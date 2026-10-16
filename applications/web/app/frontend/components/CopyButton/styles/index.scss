@@ -1,0 +1,49 @@
+@use "../../../styles/variables" as *;
+
+.copy-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 0;
+  max-width: 100%;
+
+  &__button {
+    min-width: 128px;
+  }
+
+  &__status {
+    max-width: 18rem;
+    margin-top: 8px;
+    color: $success;
+    font-size: 12px;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__manual {
+    width: 100%;
+    min-width: 0;
+    margin-top: 8px;
+    padding: 10px 12px;
+    border: 0;
+    border-radius: 10px;
+    color: $ink;
+    background: white;
+    font-size: 16px;
+
+    &:focus {
+      background: #e4f0e7;
+    }
+  }
+
+  &--manual {
+    grid-column: 1 / -1;
+    align-items: stretch;
+  }
+
+  &--manual .button {
+    align-self: flex-start;
+  }
+}

@@ -1,0 +1,81 @@
+@use "../../../styles/variables" as *;
+
+.shortener {
+  padding: 26px;
+  border: 0;
+  border-radius: 28px;
+  background: white;
+
+  &__label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  &__input {
+    min-width: 0;
+    width: 100%;
+    height: 56px;
+    padding: 14px 16px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: $paper;
+    color: $ink;
+    font-size: 16px;
+
+    &::placeholder {
+      color: $muted;
+    }
+
+    &:hover {
+      border-color: $muted;
+    }
+
+    &:focus {
+      border-color: $accent;
+    }
+
+    &:read-only {
+      background: #ebe7f2;
+    }
+
+    &--invalid {
+      border-color: #963626;
+    }
+  }
+
+  &__hint {
+    margin-top: 10px;
+    color: $muted;
+    font-size: 12px;
+  }
+
+  &__error {
+    margin-top: 16px;
+    padding: 12px 14px;
+    border: 0;
+    border-radius: 12px;
+    background: #fff3ef;
+    color: #963626;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 560px) {
+  .shortener {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .shortener__controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

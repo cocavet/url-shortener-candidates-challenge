@@ -1,0 +1,112 @@
+@use "../../../styles/variables" as *;
+
+.link-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 22px;
+  padding: 18px;
+  border: 0;
+  border-radius: 24px;
+  background: white;
+
+  &__links {
+    min-width: 0;
+  }
+
+  &__short {
+    display: block;
+    color: $accent;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__destination {
+    display: block;
+    overflow: hidden;
+    margin-top: 5px;
+    color: $muted;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__stats dt {
+    color: $muted;
+    font-size: 11px;
+  }
+
+  &__stats dd {
+    color: $muted;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  &__stats > div:last-child {
+    min-width: 48px;
+    padding-left: 18px;
+    text-align: center;
+  }
+
+  &__stats &__clicks {
+    color: $ink;
+    font-size: 17px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (max-width: 680px) {
+  .link-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 16px;
+  }
+
+  .link-row__links {
+    grid-column: 1 / -1;
+  }
+
+  .link-row__stats {
+    flex-wrap: wrap;
+    gap: 4px 14px;
+  }
+
+  .link-row__stats > div:last-child {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 6px;
+    padding-left: 14px;
+  }
+
+  .link-row__stats dt {
+    font-size: 12px;
+  }
+
+  .link-row__stats .link-row__clicks {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .link-row {
+    padding: 16px;
+  }
+}
