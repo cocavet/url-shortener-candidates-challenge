@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model ShortLink {
+  code        String   @id
+  originalUrl String
+  createdAt   DateTime
+  clickCount  Int      @default(0)
+}
